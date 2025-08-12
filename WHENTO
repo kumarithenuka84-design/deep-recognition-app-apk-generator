@@ -1,0 +1,69 @@
+
+
+*📁 Project Folder Structure (Simplified):*
+
+```
+/WhentoApp
+├── App.js
+├── firebase.js
+├── /screens
+│   ├── LoginScreen.js
+│   ├── HomeScreen.js
+│   ├── UploadScreen.js
+│   └── ProfileScreen.js
+├── /components
+│   ├── VideoCard.js
+│   └── LevelBar.js
+├── /utils
+│   ├── gems.js
+│   └── levelXP.js
+├── /assets
+│   └── (icons, splash, etc.)
+```
+
+---
+
+*🔥 firebase.js*
+```js
+// Firebase v9+
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "your-app.firebaseapp.com",
+  projectId: "your-app-id",
+  storageBucket: "your-app.appspot.com",
+  messagingSenderId: "XXXXXX",
+  appId: "1:XXXX:web:XXXX"
+};
+
+const app = initializeApp(firebaseConfig);
+
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
+```
+
+---
+
+*💎 levelXP.js*
+```js
+export const getRequiredXP = (level) => {
+  return 1000 * level;
+};
+```
+
+*💠 gems.js*
+```js
+export const gemPrice = {
+  100: 350,
+  500: 1500
+};
+```
+
+---
+
+*📄 Firebase Setup Steps:*
